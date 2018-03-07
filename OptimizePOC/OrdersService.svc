@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Factory="System.Data.Services.DataServiceHostFactory, Microsoft.Data.Services, Version=5.8.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Service="OptimizePOC.OrdersService" CodeBehind="OrdersService.svc.cs" %>
