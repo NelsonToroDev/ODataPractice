@@ -1,2 +1,2 @@
 # ODataPractice
-Practice OData, WCF DataService, Spint IoC and NHibernate
+Practice OData, WCF DataService, Spring IoC and NHibernate

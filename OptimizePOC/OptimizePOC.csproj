@@ -76,14 +76,16 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OrdersService.svc" />
-    <Content Include="Web.config" />
+    <Content Include="OptimizeService.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrderModel.cs" />
-    <Compile Include="OrdersDataModel.cs" />
-    <Compile Include="OrdersService.svc.cs">
-      <DependentUpon>OrdersService.svc</DependentUpon>
+    <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="OptimizeDataModel.cs" />
+    <Compile Include="OptimizeService.svc.cs">
+      <DependentUpon>OptimizeService.svc</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
