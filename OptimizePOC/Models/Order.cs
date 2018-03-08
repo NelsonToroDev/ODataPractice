@@ -2,16 +2,16 @@
 
 namespace OptimizePOC.Models
 {
-    [DataServiceKey("Name")]
-    public class OrderModel
+    [DataServiceKey("Id")]
+    public class Order
     {
         public int Id { get; set; }
 
         public string Name { get; set; }
     }
 
-    [DataServiceKey("Name")]
-    public class Ints
+    [DataServiceKey("Id")]
+    public class Shipment
     {
         public int Id { get; set; }
 

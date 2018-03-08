@@ -82,8 +82,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\OrderModel.cs" />
-    <Compile Include="OptimizeDataModel.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="OptimizeDataSource.cs" />
     <Compile Include="OptimizeService.svc.cs">
       <DependentUpon>OptimizeService.svc</DependentUpon>
     </Compile>
