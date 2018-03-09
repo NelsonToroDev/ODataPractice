@@ -5,7 +5,7 @@ namespace OptimizePOC.Models
 {
     [DataServiceKey("Id")]
     [Class]
-    public class Order
+    public class Shipment
     {
         [Id(Name = "Id")]
         [Generator(1, Class = "Identity")]

@@ -1,5 +1,8 @@
 ﻿using System.Data.Services;
 using System.Data.Services.Common;
+using NHibernate;
+using NHibernate.Cfg;
+using NHibernate.Mapping.Attributes;
 
 
 namespace OptimizePOC
@@ -9,6 +12,16 @@ namespace OptimizePOC
     
     public class OptimizeService : DataService<OptimizeDataSource>
     {
+        public OptimizeService()
+        {
+            Configuration cfg = new Configuration();
+            cfg.Configure();
+
+            // Add class mappings attributes to configuration object
+            //cfg.AddInputStream(HbmSerializer.Default.Serialize(typeof(Models.Order)));
+            ISessionFactory sessionFactory = cfg.BuildSessionFactory();
+        }
+
         public static void InitializeService(DataServiceConfiguration config)
         {
             config.SetEntitySetAccessRule("*", EntitySetRights.All);
