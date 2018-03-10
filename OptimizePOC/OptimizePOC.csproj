@@ -127,6 +127,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Shipment.cs" />
     <Compile Include="OptimizeDataSource.cs" />
+    <Compile Include="OptimizeHost.cs" />
     <Compile Include="OptimizeService.svc.cs">
       <DependentUpon>OptimizeService.svc</DependentUpon>
     </Compile>
@@ -145,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="App.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -171,6 +173,8 @@
           <DevelopmentServerPort>49343</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:49343/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:49343/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
