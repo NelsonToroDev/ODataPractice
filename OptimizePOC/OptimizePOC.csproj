@@ -128,6 +128,7 @@
     <Compile Include="Models\Shipment.cs" />
     <Compile Include="OptimizeDataSource.cs" />
     <Compile Include="OptimizeHost.cs" />
+    <Compile Include="OptimizeServ.cs" />
     <Compile Include="OptimizeService.svc.cs">
       <DependentUpon>OptimizeService.svc</DependentUpon>
     </Compile>

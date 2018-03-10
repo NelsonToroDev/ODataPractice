@@ -30,7 +30,7 @@ namespace OptimizePOC
         
         public void LoadAndRunApp()
         {
-            ConfigureLogger();
+            //ConfigureLogger();
 
             try
             {
@@ -52,7 +52,7 @@ namespace OptimizePOC
             Uri baseAddress = new Uri("http://localhost:6000/");
             Uri[] baseAddresses = new Uri[] { baseAddress };
 
-            // Create a new hosting instance for the Northwind 
+            // Create a new hosting instance for the OptimizeService 
             // data service at the specified address. 
             DataServiceHost host = new DataServiceHost(
                serviceType,
