@@ -34,7 +34,7 @@ namespace OptimizePOC
 
             try
             {
-                //this.context = ContextRegistry.GetContext();
+                this.context = ContextRegistry.GetContext();
             }
             catch (Exception e)
             {
