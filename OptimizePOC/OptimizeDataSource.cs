@@ -19,8 +19,12 @@ namespace OptimizePOC
 
         private static List<Shipment> _shipments;
 
+        private OptimizeDataManager optimizeDataManager;
+
         public OptimizeDataSource()
         {
+            optimizeDataManager = OptimizeDataManager.GetInstance();
+
             var processProjection = Process.GetProcesses().Take(5);
             if (_orders == null)
             {
@@ -45,17 +49,15 @@ namespace OptimizePOC
 
         public IQueryable<Order> Orders
         {
-            get => _orders.AsQueryable();
+            get => optimizeDataManager.OrderDao.FindAll().AsQueryable();
             set => _orders = new List<Order>(value);
         }
 
-
         public IQueryable<Shipment> Shipments
         {
-            get => _shipments.AsQueryable();
+            get => optimizeDataManager.ShipmentDao.FindAll().AsQueryable();
             set => _shipments = new List<Shipment>(value);
         }
-
 
         private void AddResource(object resourceToAdd, Type resourceType)
         {

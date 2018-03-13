@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using global::NHibernate;
     using Spring.Stereotype;
+    using NHibernate.Context;
 
     /// <summary>
     /// The hibernate DAO.
@@ -13,12 +14,12 @@
         /// <summary>
         /// The session factory.
         /// </summary>
-        private ISessionFactory sessionFactory;
+        protected ISessionFactory sessionFactory;
 
         /// <summary>
         /// Gets or sets SessionFactory.
         /// </summary>
-        public ISessionFactory SessionFactory
+        public virtual ISessionFactory SessionFactory
         {
             protected get { return this.sessionFactory; }
             set { this.sessionFactory = value; }
@@ -27,10 +28,14 @@
         /// <summary>
         /// Gets the current active session.
         /// </summary>
-        protected ISession CurrentSession
+        protected virtual ISession CurrentSession
         {
-            get { return this.SessionFactory.GetCurrentSession(); }
+            get {
+                return this.sessionFactory.GetCurrentSession();
+            }
         }
+
+        
 
         /// <summary>
         /// Finds all.

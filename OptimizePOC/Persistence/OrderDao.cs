@@ -5,6 +5,7 @@ using Spring.Stereotype;
 using Spring.Transaction;
 using Spring.Transaction.Interceptor;
 using OptimizePOC.Models;
+using NHibernate;
 
 namespace OptimizePOC.Persistence
 {
@@ -18,6 +19,27 @@ namespace OptimizePOC.Persistence
         /// The logger.
         /// </summary>
         private static readonly ILog Logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
+        
+        /// <summary>
+        /// Gets or sets SessionFactory.
+        /// </summary>
+        public override ISessionFactory SessionFactory
+        {
+            protected get { return this.sessionFactory; }
+            set { this.sessionFactory = value; }
+        }
+
+        /// <summary>
+        /// Gets the current active session.
+        /// </summary>
+        protected override ISession CurrentSession
+        {
+            get
+            {
+                return this.sessionFactory.GetCurrentSession();
+            }
+        }
 
         /// <summary>
         /// Finds by primary id.
